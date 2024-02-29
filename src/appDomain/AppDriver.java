@@ -87,13 +87,14 @@ public class AppDriver {
 	            SortingUtilities.insertionSort(shapeArray, comparator);
 	            break;
 	        case 'm':
-	            //SortingUtilities.mergeSort(Arrays.asList(shapeArray), comparator);
+	            SortingUtilities.mergeSort(Arrays.asList(shapeArray), comparator);
 	            break;
 	        case 'q':
 	            SortingUtilities.quickSort(shapeArray, comparator, 0, shapeArray.length - 1);
 	            break;
-	        case 'z':
-	            // Your choice of sorting algorithm
+	        case 'h':
+	            // Heap Sort
+				SortingUtilities.heapSort(shapeArray, comparator);
 	            break;
 	        default:
 	            System.out.println("Invalid sorting algorithm!");
