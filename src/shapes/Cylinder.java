@@ -3,18 +3,19 @@ package shapes;
 public class Cylinder extends Shape {
     private double radius;
 
-    public Cylinder(double radius, double height) {
+    public Cylinder(double height, double radius) {
         super(height);
         this.radius = radius;
     }
-
-    @Override
-    public double calcVolume() {
-        return Math.PI * radius * radius * height;
-    }
-
+    
     @Override
     public double calcBaseArea() {
-        return Math.PI * radius * radius;
+        return Math.PI * Math.pow(radius, 2);
     }
+    
+    @Override
+    public double calcVolume() {
+        return this.calcBaseArea() * height;
+    }
+  
 }

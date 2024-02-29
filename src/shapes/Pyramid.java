@@ -3,18 +3,19 @@ package shapes;
 public class Pyramid extends Shape {
     private double side;
 
-    public Pyramid(double side, double height) {
+    public Pyramid(double height, double side) {
         super(height);
         this.side = side;
     }
-
-    @Override
-    public double calcVolume() {
-        return (1.0 / 3.0) * side * side * height;
-    }
-
+    
     @Override
     public double calcBaseArea() {
-        return side * side;
+        return Math.pow(side, 2);
+    }   
+    
+    @Override
+    public double calcVolume() {
+        return this.calcBaseArea() * height * (1.0 / 3.0);
     }
+   
 }

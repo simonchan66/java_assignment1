@@ -2,14 +2,13 @@ package shapes;
 
 public class SquarePrism extends Prism {
 
-	public SquarePrism(double height, double side) 
-	{
+	public SquarePrism(double height, double side) {
 		super(height, side);
 	}
 	
 	@Override
 	public double calcBaseArea() {
-		return Math.pow(side, 2) * Math.sqrt(3) / 4;
+		return Math.pow(side, 2);
 	}
 	
 	@Override

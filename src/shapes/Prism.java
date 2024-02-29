@@ -12,6 +12,10 @@ public abstract class Prism extends Shape {
         return side;
     }
     
+	public void setSide(double side) {
+		this.side = side;
+	} 
+    
     public abstract double calcVolume();
 
     public abstract double calcBaseArea();

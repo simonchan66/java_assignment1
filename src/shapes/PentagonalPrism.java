@@ -1,14 +1,14 @@
 package shapes;
 
 public class PentagonalPrism extends Prism {
-	public PentagonalPrism(double height, double side) 
-	{
+	
+	public PentagonalPrism(double height, double side) {
 		super(height, side);
 	}
 	
 	@Override
 	public double calcBaseArea() {
-		return 2 * (1 + Math.sqrt(2)) * Math.pow(side, 2);
+		return 5 * Math.pow(side, 2) * Math.tan(54) / 4;
 	}
 	
 	@Override
