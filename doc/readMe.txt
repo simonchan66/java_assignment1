@@ -2,35 +2,34 @@ readMe.txt
 
 Sorting Program by Team Zelda
 Date: February 29 2024
-Sorting Program Installation and Usage Guide
 
-A) Installation
+#Sorting Program Installation and Usage Guide
+
+## Installation
 1. Ensure you have Java installed on your system. This program requires Java SE 8 or later.
-2. Eclipse IDE with Java Development Tools (JDT) installed.
-??3. Download the 'Sort.jar' file from the provided location.
-??4. Save the 'Sort.jar' file to a directory of your choice.
+2. Ensure the 'Sort.jar' file is saved in the folder.
 
-B) Usage
+## Usage
 To run the sorting program:
-??1. Open a terminal or command prompt and navigate to the directory where you saved `Sort.jar`
-??2. Use the following command structure to start the program: java -jar Sort.jar -f<file_name> -t<v/h/a> -s<b/s/i/m/q/z>
+1. Open a terminal or command prompt and navigate to the directory where you saved `Sort.jar`
+2. Use the following command structure to start the program: java -jar Sort.jar -f<file_name> -t<v/h/a> -s<b/s/i/m/q/z>
 
-C) Command Line Guidance
-* -f or `-F` followed by <file_name>: Specifies the file name and path. Ensure there are no spaces between the flag and the file name.
-* -t or `-T` followed by v (volume), h (height) or a (base area): Sets the type of comparison for sorting.
-* -s or `-S` followed by b (bubble), s (selection), i (insertion), m (merge), q (quick) or z (heap)
+### Command Line Guidance
+-f or `-F` followed by <file_name>: Specifies the file name and path. Ensure there are no spaces between the flag and the file name.
+-t or `-T` followed by v (volume), h (height) or a (base area): Sets the type of comparison for sorting.
+-s or `-S` followed by b (bubble), s (selection), i (insertion), m (merge), q (quick) or z (heap)
 
-D) Examples
+### Examples
 - To sort shapes by volume using bubble sort from a file named 'shapes1.txt':
 java -jar Sort.jar -fshapes1.txt -Tv -Sb
 
-??- To sort shapes by base area using quick sort from a file located at '"res\shapes1".txt':
+- To sort shapes by base area using quick sort from a file located at 'res\shapes1.txt':
 java -jar Sort.jar -ta -sQ -f"res\shapes1".txt
 
-??- To sort shapes by height using bubble sort from a file located at '"C:emp\shapes1.txt"':
-java -jar Sort.jar -tH -F"C:emp\shapes1.txt" -sB
+- To sort shapes by height using bubble sort from a file located at 'C:\temp\shapes1.txt':
+java -jar Sort.jar -tH -F"C:\temp\shapes1.txt" -sB
 
-E) Supported Sorting Algorithms
+### Supported Sorting Algorithms
 
 - BubbleSort (b): Simple comparison-based sorting mechanism.
 - SelectionSort (s): Picks the minimum/maximum element from the list and swaps it with the first element.
@@ -40,7 +39,7 @@ E) Supported Sorting Algorithms
 - HeapSort (z): Constructs a heap and subsequently sorts the elements.
 
 
-F) Note
+### Notes
 - The program can handle command line arguments in any order.
 - If an incorrect command line argument is entered, the program will display a helpful error message.
 - For development and testing purposes, you can configure these arguments in Eclipse under the “Run Configurations” tool, within the “Arguments” tab.

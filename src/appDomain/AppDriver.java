@@ -185,11 +185,6 @@ public class AppDriver {
 	        fileName = fileName.substring(1, fileName.length() - 1);
 	    }
 
-	    // Check if the file name starts with "res/" or "res\"
-	    if (!fileName.toLowerCase().startsWith("res/")) {
-	        // Add "res/" prefix
-	        fileName = "res/" + fileName;
-	    }
 
 	    return fileName;
 	}
