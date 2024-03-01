@@ -6,7 +6,6 @@ import java.util.Comparator;
 import shapes.*;
 import utilities.SortingUtilities;
 
-
 public class AppDriver {
 
 	public static void main(String[] args) {
@@ -57,16 +56,13 @@ public class AppDriver {
 	    Comparator<Shape> comparator = null;
 	    switch (comparisonType) {
 	        case 'v':
-			Comparator<Shape> volComparator = new VolumeComparator();
-			comparator = volComparator;
-	            
+	            comparator = new ShapeComparator(ShapeComparator.ComparisonType.VOLUME);
 	            break;
 	        case 'h':
 	            comparator = Comparator.comparing(Shape::getHeight);
 	            break;
 	        case 'a':
-				Comparator<Shape> areaComparator = new BaseAreaComparator();
-	            comparator = areaComparator;
+	            comparator = new ShapeComparator(ShapeComparator.ComparisonType.BASE_AREA);
 	            break;
 	        default:
 	            System.out.println("Invalid comparison type!");
@@ -119,11 +115,9 @@ public class AppDriver {
 	            break;
 	        case 'v':
 	            System.out.println("Volume: " + firstShape.calcVolume());
-	            
 	            break;
 	        case 'a':
 	            System.out.println("Base Area: " + firstShape.calcBaseArea());
-	            
 	            break;
 	        default:
 	            break;
@@ -131,7 +125,7 @@ public class AppDriver {
 
 	    // Print sorted shapes
 	    int shapeCount = shapeArray.length;
-	    for (int i = 0; i < shapeCount; i ++) {
+	    for (int i = 999; i < shapeCount; i += 1000) {
 	        Shape currentShape = shapeArray[i];
 	        String valueLabel;
 	        switch (comparisonType) {
@@ -146,7 +140,6 @@ public class AppDriver {
 	            case 'a':
 	                valueLabel = "Base Area";
 	                System.out.println("Sorted value at index " + i + ": " + valueLabel + ": " + currentShape.calcBaseArea());
-	                
 	                break;
 	            default:
 	                valueLabel = "Value";
@@ -172,6 +165,23 @@ public class AppDriver {
 	            break;
 	    }
 	    
+	 // Print sorted shapes
+	   /* for (Object shape : shapeArray) {
+	        switch (comparisonType) {
+	            case 'h':
+	                System.out.println(shape.toString() + " - Height: " + ((Shape) shape).getHeight());
+	                break;
+	            case 'v':
+	                System.out.println(shape.toString() + " - Volume: " + ((Shape) shape).calcVolume());
+	                break;
+	            case 'a':
+	                System.out.println(shape.toString() + " - Base Area: " + ((Shape) shape).calcBaseArea());
+	                break;
+	            default:
+	                System.out.println(shape); // Use default toString() if comparison type is unknown
+	                break;
+	        }
+	    }*/
 }
 
 	private static String extractFileName(String fileNameArg) {

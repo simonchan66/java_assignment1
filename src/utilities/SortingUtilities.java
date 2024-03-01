@@ -104,7 +104,6 @@ public class SortingUtilities {
         arr[high] = temp;
         return i + 1;
     }
-    
     // Heap Sort implementation
     public static void heapSort(Shape[] arr, Comparator<Shape> comparator) {
         int n = arr.length;
