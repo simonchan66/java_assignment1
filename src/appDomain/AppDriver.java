@@ -57,15 +57,15 @@ public class AppDriver {
 	    Comparator<Shape> comparator = null;
 	    switch (comparisonType) {
 	        case 'v':
-			Comparator<Shape> volComparator = new VolumeComparator();
+			Comparator<Shape> volComparator = new VolumeComparator().reversed();
 			comparator = volComparator;
 	            
 	            break;
 	        case 'h':
-	            comparator = Comparator.comparing(Shape::getHeight);
+	            comparator = Comparator.comparing(Shape::getHeight).reversed();
 	            break;
 	        case 'a':
-				Comparator<Shape> areaComparator = new BaseAreaComparator();
+				Comparator<Shape> areaComparator = new BaseAreaComparator().reversed();
 	            comparator = areaComparator;
 	            break;
 	        default:
@@ -96,7 +96,7 @@ public class AppDriver {
 	        case 'q':
 	            SortingUtilities.quickSort(shapeArray, comparator, 0, shapeArray.length - 1);
 	            break;
-	        case 'h':
+	        case 'z':
 	            // Heap Sort
 				SortingUtilities.heapSort(shapeArray, comparator);
 	            break;
@@ -129,11 +129,12 @@ public class AppDriver {
 	            break;
 	    }
 
-	    // Print sorted shapes
+	    // Print every thousandth value in between
 	    int shapeCount = shapeArray.length;
-	    for (int i = 0; i < shapeCount; i ++) {
+	    for (int i = 999; i < shapeCount; i += 1000) {
 	        Shape currentShape = shapeArray[i];
 	        String valueLabel;
+	   
 	        switch (comparisonType) {
 	            case 'h':
 	                valueLabel = "Height";
@@ -146,7 +147,6 @@ public class AppDriver {
 	            case 'a':
 	                valueLabel = "Base Area";
 	                System.out.println("Sorted value at index " + i + ": " + valueLabel + ": " + currentShape.calcBaseArea());
-	                
 	                break;
 	            default:
 	                valueLabel = "Value";
@@ -154,6 +154,7 @@ public class AppDriver {
 	                break;
 	        }
 	    }
+
 
 	    // Print the last sorted value
 	    Shape lastShape = shapeArray[shapeCount - 1];
