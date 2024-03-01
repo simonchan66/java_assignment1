@@ -5,50 +5,21 @@ Date: February 29, 2024
 
 # Description
 
-Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. It can be thought of as an improved selection sort: like selection sort, heapsort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element from it and inserting it into the sorted region. Unlike selection sort, heapsort does not waste time with a linear-time scan of the unsorted region; rather, heap sort maintains the unsorted region in a heap data structure to more quickly find the largest element in each step.
+Heap Sort is a comparison-based sorting algorithm. It uses a binary heap data structure. It can be thought of as an improved selection sort: like selection sort, heapsort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element from it and inserting it into the sorted region. Unlike selection sort, heapsort does not waste time with a linear-time scan of the unsorted region; rather, heap sort maintains the unsorted region in a heap data structure to more quickly find the largest element in each step.
 
 
-## Pseudocode I
-
-HEAP_SORT(arr)
-    BUILD_MAX_HEAP(arr)
-    for i from length(arr) down to 2
-        SWAP arr[1] with arr[i]
-        HEAP_SIZE = HEAP_SIZE - 1
-        MAX_HEAPIFY(arr, 1)
-
-BUILD_MAX_HEAP(arr)
-    HEAP_SIZE = length(arr)
-    for i from floor(length(arr)/2) down to 1
-        MAX_HEAPIFY(arr, i)
-
-MAX_HEAPIFY(arr, i)
-    left = 2*i
-    right = 2*i + 1
-    if left <= HEAP_SIZE and arr[left] > arr[i]
-        largest = left
-    else
-        largest = i
-    if right <= HEAP_SIZE and arr[right] > arr[largest]
-        largest = right
-    if largest != i
-        SWAP arr[i] with arr[largest]
-        MAX_HEAPIFY(arr, largest)
-        
-## Pseudocode II
+## Pseudocode
 HEAP_SORT(arr, comparator)
     n = length(arr)
 
     // Build heap (rearrange array)
-    for i = n/2 - 1 down to 0
+    for i from n/2 - 1 down to 0
         HEAPIFY(arr, n, i, comparator)
 
     // One by one extract an element from heap
-    for i = n - 1 down to 1
+    for i from n - 1 down to 1
         // Move current root to end
-        temp = arr[0]
-        arr[0] = arr[i]
-        arr[i] = temp
+        Swap arr[0] with arr[i]
 
         // call max heapify on the reduced heap
         HEAPIFY(arr, i, 0, comparator)
@@ -68,28 +39,26 @@ HEAPIFY(arr, n, i, comparator)
 
     // If largest is not root
     if largest != i
-        swap = arr[i]
-        arr[i] = arr[largest]
-        arr[largest] = swap
+        Swap arr[i] with arr[largest]
 
         // Recursively heapify the affected sub-tree
         HEAPIFY(arr, n, largest, comparator)
-
 ## Complexity Analysis
 
 ### Time Complexity:
-* Best Case:  O (n log n)
-* Average Case:  O (n log n)
-* Worst Case:  O (n log n)
-The time complexity remains  O (n log n) across all cases due to the nature of the binary heap structure and the process of heapification.
+* Best Case Scenario: O(n log n)
+* Average Case Scenario: O(n log n)
+* Worst Case Scenario: O(n log n)
+The time complexity remains to be O (n log n) across all cases because of the binary heap structure. The heapification process organizes the data into a heap to ensure sorting takes place in log time for each of the n elements.
 
 ### Space Complexity: O(1)
 
-The Heap Sort algorithm sorts in place, so it doesn't require any extra storage other than what's needed to hold the initial list.
+The Heap Sort algorithm sorts in place. This means it requires no additional memory space beyond the original array.
 
 
 ## Operational Steps
-* BUILD_MAX_HEAP: Convert the input array into a max-heap – a binary tree where the main parent node has a value greater than its children.
-* SWAP: The root (maximum value) of the heap with the last element of the heap.
-* REDUCE: The size of the heap by 1 and heapify the root again.
-* REPEAT: The process until the size of the heap is 1.
+* BUILD_HEAP: Turn the array into a heap structure, where the parent node's value is ordered according to the comparator for each child node.
+* EXTRACT_ROOT: Swap the first element (root of the heap) with the last element in the array.
+* SHRINK_HEAP: Decrease the heap's size by one to remove the last element from the heap consideration.
+* RESTORE_HEAP: Apply the heapify process to the new root to maintain the heap structure.
+* REPEAT: Continue the extract and heapify process until only one element is left in the heap.
