@@ -17,8 +17,8 @@ public class Cone extends Shape {
 	 * Postcondition: The Cone object is created 
 	 * with the specified height and radius.
 	 * 
-	 * @param height - the height value of the cone.
-	 * @param radius - the radius value of the cone.
+	 * @param height the height value of the cone.
+	 * @param radius the radius value of the cone.
 	 */
     public Cone(double height, double radius) {
         super(height);

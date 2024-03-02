@@ -6,9 +6,24 @@ import java.util.Comparator;
 import shapes.*;
 import utilities.SortingUtilities;
 
-
+/**
+ * AppDriver.java
+ *
+ * Class Definition: Represents the main driver class for the shape sorting application.
+ * Handle these command line arguments, 
+ * read a text file of random shapes that adds them to an array,
+ * using specified comparison type and sorting algorithm, 
+ * and prints relevant information about the sorting process.
+ * 
+ * @author Team Zelda
+ * @version 2.0
+ */
 public class AppDriver {
-
+    /**
+     * Main method to execute the shape sorting application.
+     *
+     * @param args the command line arguments
+     */
 	public static void main(String[] args) {
 	    String fileNameArg = null;
 	    String typeArg = null;

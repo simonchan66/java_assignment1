@@ -17,8 +17,8 @@ public abstract class Prism extends Shape {
 	 * Postcondition: The Prism object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the prism.
-	 * @param side - the edge length value of the prism.
+	 * @param height the height value of the prism.
+	 * @param side the edge length value of the prism.
 	 */
     public Prism(double height, double side) {
         super(height);
@@ -45,7 +45,7 @@ public abstract class Prism extends Shape {
 	 * Postcondition: The edge length is changed to the value specified
 	 * in the argument.
 	 * 
-	 * @param side - the new edge length value.
+	 * @param side the new edge length value.
 	 */
 	public void setSide(double side) {
 		this.side = side;

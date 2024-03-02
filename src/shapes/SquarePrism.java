@@ -15,8 +15,8 @@ public class SquarePrism extends Prism {
 	 * Postcondition: The SquarePrism object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the square prism.
-	 * @param side - the edge length value of the square prism.
+	 * @param height the height value of the square prism.
+	 * @param side the edge length value of the square prism.
 	 */
 	public SquarePrism(double height, double side) {
 		super(height, side);

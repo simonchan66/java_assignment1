@@ -17,8 +17,8 @@ public class Pyramid extends Shape {
 	 * Postcondition: The Pyramid object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the pyramid.
-	 * @param side - the edge length value of the pyramid.
+	 * @param height the height value of the pyramid.
+	 * @param side the edge length value of the pyramid.
 	 */
     public Pyramid(double height, double side) {
         super(height);

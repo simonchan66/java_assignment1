@@ -1,9 +1,12 @@
 package shapes;
 /**
  * Shape.java
- *
+ * 
  * Class Definition: Represents an abstract shape.
  * Provides methods to calculate its volume and base area.
+ * 
+ * @author Team Zelda
+ * @version 2.0
  */
 public abstract class Shape {
 	// Attributes
@@ -16,7 +19,7 @@ public abstract class Shape {
 	 * Postcondition: The Shape object is created 
 	 * with the specified height.
 	 * 
-	 * @param height - the height value of the shape.
+	 * @param height the height value of the shape.
 	 */
     public Shape(double height) {
         this.height = height;
@@ -42,17 +45,21 @@ public abstract class Shape {
 	 * Postcondition: The height is changed to the value specified
 	 * in the argument.
 	 * 
-	 * @param height - the new height value.
+	 * @param height the new height value.
 	 */
 	public void setHeight(double height) {
 		this.height = height;
 	}
     /**
      * Abstract method to calculate the volume of the shape.
+     * 
+     * @return the volume value as a double value.
      */
     public abstract double calcVolume();
     /**
      * Abstract method to calculate the base area of the shape.
+     * 
+     * @return the base area value as a double value.
      */
     public abstract double calcBaseArea();
 	/**

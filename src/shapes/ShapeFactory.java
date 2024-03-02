@@ -5,9 +5,22 @@ import java.io.FileReader;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * ShapeFactory.java
+ *
+ * Class Definition: Represents a class for creating shapes based on input data from a file.
+ */
 public class ShapeFactory {
-
+    /**
+     * Creates a list of shapes based on the input data from the specified file.
+     * 
+     * Precondition: The input data file exists.
+	 * 
+	 * Postcondition: The shape object list is created 
+	 * 
+     * @param fileName the name of the file containing the input data
+     * @return a list of created shape objects
+     */
     public static List<Object> createShapes(String fileName) {
         List<Object> shapes = new ArrayList<>();
         

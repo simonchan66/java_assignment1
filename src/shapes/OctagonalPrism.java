@@ -15,8 +15,8 @@ public class OctagonalPrism extends Prism {
 	 * Postcondition: The OctagonalPrism object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the octagonal prism.
-	 * @param side - the edge length value of the octagonal prism.
+	 * @param height the height value of the octagonal prism.
+	 * @param side the edge length value of the octagonal prism.
 	 */
 	public OctagonalPrism(double height, double side) {
 		super(height, side);

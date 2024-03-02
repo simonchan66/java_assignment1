@@ -15,8 +15,8 @@ public class PentagonalPrism extends Prism {
 	 * Postcondition: The PentagonalPrism object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the pentagonal prism.
-	 * @param side - the edge length value of the pentagonal prism.
+	 * @param height the height value of the pentagonal prism.
+	 * @param side the edge length value of the pentagonal prism.
 	 */
 	public PentagonalPrism(double height, double side) {
 		super(height, side);

@@ -15,8 +15,8 @@ public class TriangularPrism extends Prism {
 	 * Postcondition: The TriangularPrism object is created 
 	 * with the specified height and edge length.
 	 * 
-	 * @param height - the height value of the triangular prism.
-	 * @param side - the edge length value of the triangular prism.
+	 * @param height the height value of the triangular prism.
+	 * @param side the edge length value of the triangular prism.
 	 */
 	public TriangularPrism(double height, double side) {
         super(height, side); // Assuming side length is the same as the base length in a triangular prism

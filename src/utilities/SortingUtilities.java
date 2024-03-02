@@ -5,10 +5,25 @@ import java.util.Comparator;
 import java.util.List;
 
 import shapes.Shape;
-
+/**
+ * SortingUtilities.java
+ * 
+ * Class Definition: Provides an implementation of sorting algorithms for sorting an array of elements.
+ * 
+ * @author Team Zelda
+ * @version 2.0
+ */
 public class SortingUtilities {
-
-    // Bubble Sort implementation
+    /**
+     * Sorts an array of using the Bubble Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     */
     public static void bubbleSort(Shape[] arr, Comparator<Shape> comparator) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -24,8 +39,16 @@ public class SortingUtilities {
             }
         }
     }
-
-    // Merge Sort implementation
+    /**
+     * Sorts an array of using the Merge Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     */
     public static void mergeSort(List<Shape> list, Comparator<? super Shape> comparator) {
         // Only sort if list size is greater than 1
         if (list.size() > 1) {
@@ -45,7 +68,6 @@ public class SortingUtilities {
             merge(list, left, right, comparator);
         }
     }
-
     // Merges two sorted lists into one
     private static void merge(List<Shape> list, List<Shape> left, List<Shape> right,
             Comparator<? super Shape> comparator) {
@@ -67,8 +89,16 @@ public class SortingUtilities {
             list.set(k++, right.get(j++));
         }
     }
-
-    // Insertion Sort implementation
+    /**
+     * Sorts an array of using the Insertion Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     */
     public static void insertionSort(Shape[] arr, Comparator<Shape> comparator) {
         for (int i = 1; i < arr.length; i++) {
             Shape key = arr[i];
@@ -85,8 +115,16 @@ public class SortingUtilities {
             arr[j + 1] = key;
         }
     }
-
-    // Selection Sort implementation
+    /**
+     * Sorts an array of using the Selection Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     */
     public static void selectionSort(Shape[] arr, Comparator<Shape> comparator) {
         for (int i = 0; i < arr.length - 1; i++) {
             // Assume the first element is minimum
@@ -105,8 +143,18 @@ public class SortingUtilities {
             arr[i] = temp;
         }
     }
-
-    // Quick Sort implementation
+    /**
+     * Sorts an array of using the Quick Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     * @param low the index of the first element of the array.
+     * @param high the index of the last element of the array.
+     */
     public static void quickSort(Shape[] arr, Comparator<Shape> comparator, int low, int high) {
         if (low < high) {
             // Partition the array and get the pivot index.
@@ -117,7 +165,6 @@ public class SortingUtilities {
             quickSort(arr, comparator, pi + 1, high);
         }
     }
-
     private static int partition(Shape[] arr, Comparator<Shape> comparator, int low, int high) {
         // Choose the last element as pivot.
         Shape pivot = arr[high];
@@ -140,8 +187,16 @@ public class SortingUtilities {
         arr[high] = temp;
         return i + 1;
     }
-
-    // Heap Sort implementation
+    /**
+     * Sorts an array of using the Heap Sort algorithm.
+     * 
+     * Precondition: The array of elements and comparator exists.
+	 * 
+	 * Postcondition: The array is sorted.
+	 * 
+     * @param arr the array of elements to be sorted.
+     * @param comparator the comparator used to determine the order of the elements.
+     */
     public static void heapSort(Shape[] arr, Comparator<Shape> comparator) {
         int n = arr.length;
 
@@ -160,7 +215,6 @@ public class SortingUtilities {
             heapify(arr, i, 0, comparator);
         }
     }
-
     // Fix the heap so parents are larger than their children.
     private static void heapify(Shape[] arr, int n, int i, Comparator<Shape> comparator) {
         // Initialize largest as root

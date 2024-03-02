@@ -17,8 +17,8 @@ public class Cylinder extends Shape {
 	 * Postcondition: The Cylinder object is created 
 	 * with the specified height and radius.
 	 * 
-	 * @param height - the height value of the cylinder.
-	 * @param radius - the radius value of the cylinder.
+	 * @param height the height value of the cylinder.
+	 * @param radius the radius value of the cylinder.
 	 */
     public Cylinder(double height, double radius) {
         super(height);
