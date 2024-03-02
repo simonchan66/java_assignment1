@@ -106,7 +106,7 @@ public class AppDriver {
 	            SortingUtilities.insertionSort(shapeArray, comparator);
 	            break;
 	        case 'm':
-	            SortingUtilities.mergeSort(Arrays.asList(shapeArray), comparator);
+	            SortingUtilities.mergeSort(shapeArray, comparator);
 	            break;
 	        case 'q':
 	            SortingUtilities.quickSort(shapeArray, comparator, 0, shapeArray.length - 1);

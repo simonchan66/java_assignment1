@@ -1,14 +1,17 @@
 package utilities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
 import shapes.Shape;
+
 /**
  * SortingUtilities.java
  * 
- * Class Definition: Provides an implementation of sorting algorithms for sorting an array of elements.
+ * Class Definition: Provides an implementation of sorting algorithms for
+ * sorting an array of elements.
  * 
  * @author Team Zelda
  * @version 2.0
@@ -18,10 +21,10 @@ public class SortingUtilities {
      * Sorts an array of using the Bubble Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
      */
     public static void bubbleSort(Shape[] arr, Comparator<Shape> comparator) {
@@ -39,64 +42,69 @@ public class SortingUtilities {
             }
         }
     }
+
     /**
      * Sorts an array of using the Merge Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
      */
-    public static void mergeSort(List<Shape> list, Comparator<? super Shape> comparator) {
-        // Only sort if list size is greater than 1
-        if (list.size() > 1) {
+    public static void mergeSort(Shape[] arr, Comparator<? super Shape> comparator) {
+        // Only sort if array length is greater than 1
+        if (arr.length > 1) {
 
-            // Find the middle of the list
-            int mid = list.size() / 2;
+            // Find the middle of the array
+            int mid = arr.length / 2;
 
-            // Split the list in half, left and right
-            List<Shape> left = new ArrayList<>(list.subList(0, mid));
-            List<Shape> right = new ArrayList<>(list.subList(mid, list.size()));
+            // Split the array in half, left and right
+            Shape[] left = Arrays.copyOfRange(arr, 0, mid);
+            Shape[] right = Arrays.copyOfRange(arr, mid, arr.length);
 
             // Recursively sort the two halves
             mergeSort(left, comparator);
             mergeSort(right, comparator);
 
             // Merge the sorted halves together
-            merge(list, left, right, comparator);
+            merge(arr, left, right, comparator);
         }
     }
-    // Merges two sorted lists into one
-    private static void merge(List<Shape> list, List<Shape> left, List<Shape> right,
-            Comparator<? super Shape> comparator) {
+
+    // Merges two sorted arrays into one sorted array
+    private static void merge(Shape[] arr, Shape[] left, Shape[] right, Comparator<? super Shape> comparator) {
         int i = 0, j = 0, k = 0;
-        while (i < left.size() && j < right.size()) {
-            if (comparator.compare(left.get(i), right.get(j)) <= 0) {
-                list.set(k++, left.get(i++));
+
+        // Merge the left and right arrays
+        while (i < left.length && j < right.length) {
+            if (comparator.compare(left[i], right[j]) <= 0) {
+                arr[k++] = left[i++];
             } else {
-                list.set(k++, right.get(j++));
+                arr[k++] = right[j++];
             }
         }
-        // Add any remaining elements from the left list
-        while (i < left.size()) {
-            list.set(k++, left.get(i++));
+
+        // Add any remaining elements from the left array
+        while (i < left.length) {
+            arr[k++] = left[i++];
         }
 
-        // Add any remaining elements from the right list
-        while (j < right.size()) {
-            list.set(k++, right.get(j++));
+        // Add any remaining elements from the right array
+        while (j < right.length) {
+            arr[k++] = right[j++];
         }
     }
+
     /**
      * Sorts an array of using the Insertion Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
      */
     public static void insertionSort(Shape[] arr, Comparator<Shape> comparator) {
@@ -115,14 +123,15 @@ public class SortingUtilities {
             arr[j + 1] = key;
         }
     }
+
     /**
      * Sorts an array of using the Selection Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
      */
     public static void selectionSort(Shape[] arr, Comparator<Shape> comparator) {
@@ -143,17 +152,18 @@ public class SortingUtilities {
             arr[i] = temp;
         }
     }
+
     /**
      * Sorts an array of using the Quick Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
-     * @param low the index of the first element of the array.
-     * @param high the index of the last element of the array.
+     * @param low        the index of the first element of the array.
+     * @param high       the index of the last element of the array.
      */
     public static void quickSort(Shape[] arr, Comparator<Shape> comparator, int low, int high) {
         if (low < high) {
@@ -165,14 +175,17 @@ public class SortingUtilities {
             quickSort(arr, comparator, pi + 1, high);
         }
     }
+
     private static int partition(Shape[] arr, Comparator<Shape> comparator, int low, int high) {
         // Choose the last element as pivot.
         Shape pivot = arr[high];
 
-        // Index of the smaller element indicates the right position of the pivot at the moment
+        // Index of the smaller element indicates the right position of the pivot at the
+        // moment
         int i = low - 1;
         for (int j = low; j < high; j++) {
-             // If current element is smaller than the pivot, swap it with the greater element
+            // If current element is smaller than the pivot, swap it with the greater
+            // element
             if (comparator.compare(arr[j], pivot) < 0) {
                 i++;
                 // Swap arr[i] and arr[j].
@@ -181,20 +194,22 @@ public class SortingUtilities {
                 arr[j] = temp;
             }
         }
-        // Swap the pivot element with the element at i+1 so that the pivot is at its correct sorted position.
+        // Swap the pivot element with the element at i+1 so that the pivot is at its
+        // correct sorted position.
         Shape temp = arr[i + 1];
         arr[i + 1] = arr[high];
         arr[high] = temp;
         return i + 1;
     }
+
     /**
      * Sorts an array of using the Heap Sort algorithm.
      * 
      * Precondition: The array of elements and comparator exists.
-	 * 
-	 * Postcondition: The array is sorted.
-	 * 
-     * @param arr the array of elements to be sorted.
+     * 
+     * Postcondition: The array is sorted.
+     * 
+     * @param arr        the array of elements to be sorted.
      * @param comparator the comparator used to determine the order of the elements.
      */
     public static void heapSort(Shape[] arr, Comparator<Shape> comparator) {
@@ -215,14 +230,15 @@ public class SortingUtilities {
             heapify(arr, i, 0, comparator);
         }
     }
+
     // Fix the heap so parents are larger than their children.
     private static void heapify(Shape[] arr, int n, int i, Comparator<Shape> comparator) {
         // Initialize largest as root
-        int largest = i; 
-         // Position of the left child.
-        int l = 2 * i + 1; 
+        int largest = i;
+        // Position of the left child.
+        int l = 2 * i + 1;
         // Position of the right child.
-        int r = 2 * i + 2; 
+        int r = 2 * i + 2;
 
         // If left child is larger than root
         if (l < n && comparator.compare(arr[l], arr[largest]) > 0)
